@@ -23,10 +23,11 @@ class User extends Component {
       blog,
       login,
       html_url,
-      follwers,
+      company,
+      followers,
       following,
       public_repos,
-      publi_gists,
+      public_gists,
       hireable
     } = this.props.user;
 
@@ -55,6 +56,43 @@ class User extends Component {
               />
               <h1>{name}</h1>
               <p>Location: {location}</p>
+            </div>
+            <div>
+              {bio && (
+                <Fragment>
+                  <h3>Bio</h3>
+                  <p>{bio}</p>
+                </Fragment>
+              )}
+              <a href={html_url} className="btn btn-dark my-1">
+                Visit Github Profile
+              </a>
+              <ul>
+                <li>
+                  {login && (
+                    <Fragment>
+                      <strong>Username: </strong>
+                      {login}
+                    </Fragment>
+                  )}
+                </li>
+                <li>
+                  {company && (
+                    <Fragment>
+                      <strong>Company: </strong>
+                      {company}
+                    </Fragment>
+                  )}
+                </li>
+                <li>
+                  {blog && (
+                    <Fragment>
+                      <strong>Website: </strong>
+                      {blog}
+                    </Fragment>
+                  )}
+                </li>
+              </ul>
             </div>
           </div>
         </Fragment>

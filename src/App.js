@@ -11,13 +11,11 @@ import './App.css';
 
 import GithubState from './context/github/GithubState';
 const App = () => {
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState(null);
 
-  //Search Users
 
   // Get a Single Github User
   const getUser = async username => {
@@ -43,11 +41,6 @@ const App = () => {
     setLoading(false);
   };
 
-  //clear users from state
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  };
 
   // Set Alert
   const showAlert = (msg, type) => {
@@ -69,12 +62,8 @@ const App = () => {
                 path="/"
                 render={props => (
                   <Fragment>
-                    <Search
-                      clearUsers={clearUsers}
-                      showClear={users.length > 0 ? true : false}
-                      setAlert={showAlert}
-                    />
-                    <Users  />
+                    <Search setAlert={showAlert} />
+                    <Users />
                   </Fragment>
                 )}
               />

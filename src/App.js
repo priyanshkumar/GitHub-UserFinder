@@ -18,7 +18,6 @@ const App = () => {
   const [alert, setAlert] = useState(null);
 
   //Search Users
-  
 
   // Get a Single Github User
   const getUser = async username => {
@@ -71,12 +70,11 @@ const App = () => {
                 render={props => (
                   <Fragment>
                     <Search
-                      searchUsers={searchUsers}
                       clearUsers={clearUsers}
                       showClear={users.length > 0 ? true : false}
                       setAlert={showAlert}
                     />
-                    <Users loading={loading} users={users} />
+                    <Users  />
                   </Fragment>
                 )}
               />
